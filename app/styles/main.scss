@@ -1,0 +1,207 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+$stripe-height: 6px;
+$red: #FF0000;
+$orange: #FF8000;
+$yellow: #FFFF00;
+$green: #00FF00;
+$blue: #0000FF;
+$turquoise: #00FFFF;
+$violet: #7F00FF;
+$pink: #F5A9F2;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin round-button($diameter){
+    width: $diameter;
+    min-width: $diameter;
+    height: $diameter;
+    min-height: $diameter;
+    @include border-radius($diameter / 2);
+}
+
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.container 
+{
+    background-color: #fff;
+}
+
+/* Space out content a bit */
+body {
+    padding: 0px;
+    width: 100%;
+    min-width: 100%;
+    background-color: lighten($pink, 10%);
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+}
+
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+#topBar 
+{
+    height: 12px;
+    min-height: 12px;
+    width: 100%;
+    min-width: 100%;
+    background-image: url('/images/rainbow-bg.jpg');
+    background-repeat: repeat-x;
+}
+
+.red-stripe{
+    height: $stripe-height;
+    min-height: $stripe-height;
+    background-color: $red;
+    width: 16.66%;
+}
+
+.orange-stripe{
+    height: $stripe-height;
+    min-height: $stripe-height;   
+    background-color: $orange;
+    width: 16.66%;
+}
+
+.yellow-stripe{
+    height: $stripe-height;
+    min-height: $stripe-height;
+    background-color: $yellow;
+    width: 16.66%;
+}
+
+.green-stripe{
+    height: $stripe-height;
+    min-height: $stripe-height;
+    background-color: $green;
+    width: 16.66%;
+}
+
+.blue-stripe {
+    height: $stripe-height;
+    min-height: $stripe-height;
+    background-color: $blue;
+    width: 16.66%;
+}
+
+.violet-stripe {
+    height: $stripe-height;
+    min-height: $stripe-height;
+    background-color: $violet;
+    width: 16.66%;
+}
+
+header {
+
+    h1 {
+        //color:white;
+        font-family: 'Lily Script One', cursive; 
+    }
+}
+
+#mainNav {
+
+    float: right;
+    
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li { 
+        display: inline-block; 
+    }
+
+    a {
+        color: #666666;
+        display: block;
+        padding: 10px 20px 0px 20px;
+        text-decoration: none;
+        text-align: center;
+        height: 100%;
+        div {
+            padding-top: 12px;
+            @include round-button(50px);
+            background-color: $turquoise;
+        }
+
+        i {
+            color: #fff;
+        }
+    }
+    a:hover{
+        color: #333;
+        background-color: lighten($pink, 10%);
+
+        i {
+            color: darken($pink, 10%);
+        }
+    }
+    a.active {
+
+        i {
+            color: darken($pink, 10%);
+        } 
+    }
+}
