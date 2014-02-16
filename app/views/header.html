@@ -1,7 +1,7 @@
 <div id="topBar">
 	
 </div>
-<header>
+<header ng-controller="NavHeaderCtrl">
 	<div class="container">
 		<!--
 		<div class="row">
@@ -20,15 +20,15 @@
 			<div class="col-sm-6">
 				<nav id="mainNav">
 					<ul>
-						<li>
-							<a href="#"> 
+						<li ng-repeat="s in sections">
+							<a ng-href="#/{{s.path}}"> 
 								<div>
-									<i class="fa fa-cutlery fa-2x"></i>
+									<i class="fa fa-2x {{s.iconClass}}"></i>
 								</div>
-								<h4 class="food">Food</h4>
+								<h4>{{s.label}}</h4>
 							</a>
 						</li>
-						<li>
+						<!--<li>
 							<a href="#"> 
 								<div>
 									<i class="fa fa-scissors fa-2x"></i>
@@ -43,7 +43,7 @@
 								</div>
 								<h4 class="fun">Fun</h4>
 							</a>
-						</li>
+						</li>-->
 					</ul>
 				</nav>
 			</div>
@@ -59,14 +59,17 @@
 		</div>
 		<div class="row" ng-show="showSubMenu">
 			<div class="col-xs-12">
-				<nav id="subNav">
-					<ul>
-						<li ng-repeat="">
-							<a>
-							</a>
-						</li>
-					</ul>
-				</nav>
+				<div id="subNavContainer">
+					<nav id="subNav">
+						<ul>
+							<li ng-repeat="c in subSections.categories">
+								<a href="#">
+									{{c}}
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</div>
 	</div>

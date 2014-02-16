@@ -1,28 +1,35 @@
 'use strict';
 
 angular.module('rlbApp')
-  .controller('NavHeaderCtrl', function ($scope, $rootScope, $location) {
-    $scope.currentSection = 'HOME';
+  .controller('NavHeaderCtrl', function ($scope, $rootScope, $location, ContentService) {
+    $scope.currentSection = null;
+
+    $scope.sections = ContentService.getSections();
 
     $rootScope.$on("$locationChangeSuccess", function (){
-    	var mode = $scope.currentMode;
+    	var section = null;
     	var path = $location.path();
-    	if(isBarnPath(path))
-    	{
-    		mode = BARN;
+    	var regex;
+
+    	for(var i=0;i<$scope.sections.length;i++){
+    		regex = new RegExp($scope.sections[i].path, 'g');
+    		if(regex.test(path)) 
+    		{
+    			section = $scope.sections[i];
+    			break;
+    		}
     	}
-    	else if(isMedPath(path))
+
+    	$scope.currentSection = section;
+
+    	if($scope.currentSection)
     	{
-    		mode = MED;
+    		$scope.subSections = ContentService.getSubSections($scope.currentSection);
+    		$scope.showSubMenu = true;
     	}
-    	else if(isMortalityPath(path))
-    	{
-    		mode = MORTALITY;
-    	}
-    	else if(path === "/")
-    	{
-    		mode = SUMMARY;
-    	}
-    	$scope.currentMode = mode;
+    	else
+		{
+			$scope.showSubMenu = false;
+		}
     });
   });

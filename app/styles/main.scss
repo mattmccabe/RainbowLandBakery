@@ -5,7 +5,7 @@ $orange: #FF8000;
 $yellow: #FFFF00;
 $green: #00FF00;
 $blue: #0000FF;
-$turquoise: #00FFFF;
+$turquoise: darken(#00FFFF, 5%);
 $violet: #7F00FF;
 $pink: #F5A9F2;
 
@@ -203,5 +203,48 @@ header {
         i {
             color: darken($pink, 10%);
         } 
+    }
+}
+
+#subNavContainer{
+    margin: auto;
+    text-align: center;
+}
+
+#subNav {
+    
+    margin-top: 10px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li { 
+        display: inline-block; 
+        margin-left: 10px;
+    }
+
+    a {
+        color: #fff;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        height: 100%;
+        padding:10px;
+        background-color: $turquoise;
+        @include border-radius(50px);
+        div {
+            padding-top: 12px;
+            
+            background-color: $turquoise;
+        }
+    }
+    a:hover{
+        color: darken($pink, 10%);
+    }
+    a.active {
+        color: darken($pink, 10%);
     }
 }

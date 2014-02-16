@@ -2,22 +2,28 @@
 
 angular.module('rlbApp')
   .service('ContentService', function ContentService() {
-    var sections = {
-            'recipes': {
+    var sections = [
+    		{
+            	id: 'food',
                 label: 'Food',
                 desc: '',
-                iconClass: 'fa-cutlery'
+                iconClass: 'fa-cutlery',
+                path: 'food'
             },
-            'crafts': {
+            {
+            	id: 'crafts',
                 label: 'Crafts',
                 desc: '',
-                iconClass: ''
+                iconClass: 'fa-scissors',
+                path: 'crafts'
             },
-            'fun': {
+            {
+            	id: 'fun',
                 label: 'Fun',
-                desc:'icon-rocket'
+                iconClass:'fa-thumbs-up',
+                path: 'fun'
             }
-        };
+        ];
 
         var recipeContent = {
         	categories: ['Drinks', 'Foods', 'Healthy Foods', 'Desserts', 'Frostings']
@@ -32,23 +38,23 @@ angular.module('rlbApp')
         	categories: ['Indoor', 'Outdoor']
         };
 
-        var subSection = {
-        	'recipes' : recipeContent,
+        var subSections = {
+        	'food' : recipeContent,
         	'crafts' : craftContent,
         	'fun' : funContent
         };
 
-        var getSection = function () {
-            return content;
+        var getSections = function () {
+            return sections;
         }
 
-        var getSubSection = function(parent)
+        var getSubSections = function(parent)
         {
-        	return subContent[contentName];
+        	return subSections[parent.id];
         }
 
         return {
-            getContent: getContent,
-            getSubContent: getSubContent
+            getSections: getSections,
+            getSubSections: getSubSections
         };
   });

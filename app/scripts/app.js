@@ -12,6 +12,10 @@ angular.module('rlbApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/food', {
+        templateUrl: 'views/food.html',
+        controller: 'FoodCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
