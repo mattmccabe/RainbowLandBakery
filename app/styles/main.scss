@@ -99,6 +99,18 @@ body {
     width: 16.66%;
 }
 
+
+.chevronHeader {
+    background-color: $pink;   
+}
+.chevronRow
+{
+    background-image: url('/images/chevron-16-1.jpg');
+    background-repeat: repeat-x repeat-y;
+    border-top: solid 3px #666;
+    border-bottom: solid 3px #666;
+}
+
 header {
 
     h1 {
@@ -202,3 +214,18 @@ header {
     width: 100%;
     min-height: 100%;
 }
+
+.artWrap {
+    text-align: center;
+    vertical-align: center;
+    width: 100%;
+    padding: 40px 10px;
+
+    img {
+        border: solid 1px #666;
+        -moz-box-shadow:    5px 5px 5px #666;
+        -webkit-box-shadow: 5px 5px 5px #666;
+        box-shadow:         5px 5px 5px #666;
+    }
+}
+
