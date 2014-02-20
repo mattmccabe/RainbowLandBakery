@@ -21,29 +21,14 @@
 				<nav id="mainNav">
 					<ul>
 						<li ng-repeat="s in sections">
-							<a ng-href="#/{{s.path}}"> 
+							<a ng-href="#/{{s.path}}" ng-class="{active:s===currentSection}"> 
 								<div>
 									<i class="fa fa-2x {{s.iconClass}}"></i>
 								</div>
 								<h4>{{s.label}}</h4>
 							</a>
 						</li>
-						<!--<li>
-							<a href="#"> 
-								<div>
-									<i class="fa fa-scissors fa-2x"></i>
-								</div>
-								<h4 class="crafts">Crafts</h4>
-							</a>
-						</li>
-						<li>
-							<a href="#"> 
-								<div>
-									<i class="fa fa-thumbs-up fa-2x"></i>
-								</div>
-								<h4 class="fun">Fun</h4>
-							</a>
-						</li>-->
+			
 					</ul>
 				</nav>
 			</div>
@@ -63,8 +48,8 @@
 					<nav id="subNav">
 						<ul>
 							<li ng-repeat="c in subSections.categories">
-								<a href="#">
-									{{c}}
+								<a ng-href="#/{{currentSection.path}}/{{c}}" ng-class="{active:false}">
+									<strong>{{c}}</strong>
 								</a>
 							</li>
 						</ul>
