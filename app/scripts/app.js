@@ -24,6 +24,10 @@ angular.module('rlbApp', [
         templateUrl: 'views/fun.html',
         controller: 'FunCtrl'
       })
+      .when('/easter', {
+        templateUrl: 'views/easter.html',
+        controller: 'EasterCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
