@@ -1,0 +1,95 @@
+
+	<div class="row">
+		<div class="text-center col-sm-12">
+			<h1 class="">Easter Egg Hunt 2014</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="text-center  col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h2 class="">{{currentClue.name}}</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			{{clue1.name}}
+			<audio controls preload>
+			    <source src="{{clue1.songUrl}}" type="audio/mpeg" />
+			    <!--
+			    Here comes the Flash (in case you want any) fallback,
+			    or you can write something here like this
+			    -->
+			    <p class="error-message">Try another browser...</p>
+			</audio>
+		</div>
+	</div>
+	<div class="row" ng-show="clue1.solved">
+		<div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			{{clue2.name}}
+			<audio controls preload>
+			    <source src="{{clue2.songUrl}}" type="audio/mpeg" />
+			    <!--
+			    Here comes the Flash (in case you want any) fallback,
+			    or you can write something here like this
+			    -->
+			    <p class="error-message">Try another browser...</p>
+			</audio>
+		</div>
+	</div>
+	<div class="row" ng-show="clue2.solved">
+		<div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			{{clue3.name}}
+			<audio controls preload>
+			    <source src="{{clue3.songUrl}}" type="audio/mpeg" />
+			    <!--
+			    Here comes the Flash (in case you want any) fallback,
+			    or you can write something here like this
+			    -->
+			    <p class="error-message">Try another browser...</p>
+			</audio>
+		</div>
+	</div>
+	<div class="row" ng-show="clue3.solved">
+		<div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			{{clue4.name}}
+			<audio controls preload>
+			    <source src="{{clue4.songUrl}}" type="audio/mpeg" />
+			    <!--
+			    Here comes the Flash (in case you want any) fallback,
+			    or you can write something here like this
+			    -->
+			    <p class="error-message">Try another browser...</p>
+			</audio>
+		</div>
+	</div>
+	<div class="row" ng-show="clue4.solved">
+		<div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			{{clue5.name}}
+			<audio controls preload>
+			    <source src="{{clue5.songUrl}}" type="audio/mpeg" />
+			    <!--
+			    Here comes the Flash (in case you want any) fallback,
+			    or you can write something here like this
+			    -->
+			    <p class="error-message">Try another browser...</p>
+			</audio>
+		</div>
+	</div>
+	<div class="row" ng-show="clue5.solved">
+		<div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h1>YOU WIN</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<br/>
+			Egg Code:<input type=text ng-model="huntCode"/>
+		</div>
+	</div>
+	<div class="row">
+		<div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<br/>
+			<button type="button" class="btn btn-info" ng-click="checkCode()">Submit Code</button>			
+			<br/>
+			<br/>
+		</div>
+	</div>
