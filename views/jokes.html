@@ -1,0 +1,18 @@
+<br>
+<div class="jumbotron">  
+	<h1>Jokes</h1>
+	<p>Get Ready to laugh!</p>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Knock Knock Jokes</h3>
+  </div>
+</div>
+<blockquote ng-repeat="kkj in kkJokes">
+		<h4>Knock Knock</h4>
+		<p>Whos' there?</p>
+		<h4>{{kkj.whosThere}}</h4>
+		<p>{{kkj.whosThere}} who?</p>
+		<h4>{{kkj.whosThereWho}}</h4>
+    </blockquote>
